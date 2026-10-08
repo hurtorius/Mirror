@@ -1,0 +1,9 @@
+package org.hurtorius.mirror.core;
+import java.util.*;
+/** A custom convex outline uses normalized, portable points. */
+public final class Outline {
+    public record Point(double x,double y){}
+    public static List<Point> hull(List<Point> points){List<Point> sorted=points.stream().distinct().sorted(Comparator.comparingDouble(Point::x).thenComparingDouble(Point::y)).toList();if(sorted.size()<3)return new ArrayList<>(sorted);List<Point> hull=new ArrayList<>();for(Point p:sorted){while(hull.size()>1&&cross(hull.get(hull.size()-2),hull.getLast(),p)<=0)hull.removeLast();hull.add(p);}int lower=hull.size();for(int i=sorted.size()-2;i>=0;i--){Point p=sorted.get(i);while(hull.size()>lower&&cross(hull.get(hull.size()-2),hull.getLast(),p)<=0)hull.removeLast();hull.add(p);}hull.removeLast();return hull;}
+    public static void validate(List<Point> points){if(points==null||points.size()<3||points.size()>64)throw new IllegalArgumentException("Use 3 to 64 custom outline points.");for(Point p:points){if(p==null)throw new IllegalArgumentException("Outline point missing.");ScreenSpec.range(p.x,0,1,"Outline x");ScreenSpec.range(p.y,0,1,"Outline y");}List<Point> hull=hull(points);if(hull.size()!=points.size()||!new HashSet<>(hull).equals(new HashSet<>(points)))throw new IllegalArgumentException("The custom outline must form one convex shape.");double sign=0;for(int i=0;i<points.size();i++){double c=cross(points.get(i),points.get((i+1)%points.size()),points.get((i+2)%points.size()));if(Math.abs(c)<1e-8)continue;if(sign!=0&&Math.signum(c)!=sign)throw new IllegalArgumentException("Outline points must run around the edge in order.");sign=Math.signum(c);}if(sign==0)throw new IllegalArgumentException("The custom outline needs an area.");}
+    private static double cross(Point a,Point b,Point c){return (b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);}
+}

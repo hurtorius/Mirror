@@ -1,0 +1,366 @@
+{
+  "meta": {
+    "format_version": "4.10",
+    "model_format": "java_block",
+    "box_uv": false
+  },
+  "name": "Mirror Initiator \u2014 World Base",
+  "model_identifier": "mirror:initiator",
+  "resolution": {
+    "width": 64,
+    "height": 64
+  },
+  "elements": [
+    {
+      "name": "Carved anchor",
+      "type": "cube",
+      "uuid": "3cc7659e-790b-57a2-8653-a1e79ad3bb9f",
+      "from": [
+        2,
+        0,
+        2
+      ],
+      "to": [
+        14,
+        3,
+        14
+      ],
+      "origin": [
+        8,
+        0,
+        8
+      ],
+      "autouv": 0,
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            16,
+            12,
+            19
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            16,
+            12,
+            19
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0,
+            16,
+            12,
+            19
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0,
+            16,
+            12,
+            19
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0,
+            0,
+            12,
+            12
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0,
+            16,
+            12,
+            19
+          ],
+          "texture": 0
+        }
+      },
+      "color": 0
+    },
+    {
+      "name": "Inset lid",
+      "type": "cube",
+      "uuid": "32892d2e-1210-5be0-ae44-b2690afabb7a",
+      "from": [
+        3,
+        3,
+        3
+      ],
+      "to": [
+        13,
+        4,
+        13
+      ],
+      "origin": [
+        8,
+        0,
+        8
+      ],
+      "autouv": 0,
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            16,
+            0,
+            26,
+            10
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        }
+      },
+      "color": 0
+    },
+    {
+      "name": "Crystal socket",
+      "type": "cube",
+      "uuid": "ca38b4b9-db96-5001-8191-99fd503f3475",
+      "from": [
+        6,
+        4,
+        6
+      ],
+      "to": [
+        10,
+        4.5,
+        10
+      ],
+      "origin": [
+        8,
+        0,
+        8
+      ],
+      "autouv": 0,
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            28,
+            0,
+            32,
+            4
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            16,
+            16,
+            26,
+            17
+          ],
+          "texture": 0
+        }
+      },
+      "color": 0
+    }
+  ],
+  "outliner": [
+    {
+      "name": "Anchor",
+      "origin": [
+        8,
+        0,
+        8
+      ],
+      "color": 0,
+      "uuid": "125fd083-b5d8-524e-87f0-9a0c59495187",
+      "export": true,
+      "isOpen": false,
+      "children": [
+        "3cc7659e-790b-57a2-8653-a1e79ad3bb9f",
+        "32892d2e-1210-5be0-ae44-b2690afabb7a",
+        "ca38b4b9-db96-5001-8191-99fd503f3475"
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "path": "initiator_atlas.png",
+      "name": "initiator_atlas.png",
+      "folder": "block",
+      "namespace": "mirror",
+      "id": "atlas",
+      "particle": true,
+      "render_mode": "default",
+      "visible": true,
+      "internal": true,
+      "saved": true,
+      "uuid": "91816f0f-d437-53db-bfbb-53e716359c96",
+      "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFWElEQVR4nO2ZbWgURxzGn8tuci85T3N7ZxDvEs+SNA3WqtWmRVpE0BRa+0EkLRREaUGEUrGF9ls/9Gs/lJTSKrSNWEppEQsqpbYgxbTUaLVaY3rxCHmVYnJ7kctlZ9/m0g+bO2/uLpeLSRzT7A8W9v/fmdlnn5nZmdtztLUdmsI0Y+PjCNbUoBTd3deZeMOGTSXL59d7+VkXk7+1qQ1uvwSpoQFKIoFE7Db6j51Ey1sH4ZUCWNPQiJQs499YL7o+7cDut9+ELyAh1Pg4krKMkd5e/PzJF2g6fAAeyY9gQyMUWcZYLIbo5ydm1SUCwJ9/XcsmBgf6Zyy8dfOWovm9zyRxtP0mAKCpqZm5dqhVwOnLPib3d/MrAICNPWegJBJw+yWsWheBkkhky6RkGV4pgGAkgpQsZ/NJWYYvIGFNZD2SOXklIcMj+eFfF4GSk58NMXOy73lPNnnxH+v8hSeUbO5Up4KZONp+E/WhMEbj8QIDj5+PIFh6UMEXCsEgBB6/H4mcvBQKQScKvJIExO7ng6EwNEWBT5KYdlaFwlY7kgTEYigHMTfIPHiGK8O1IKkJxoiZGI3HQVTC5Nwud9GyG3vOMLFBCEhChkHY+rpCkJJl6IS9v0YIkrIMTWHzhqJAkQvbKYWYnxgcGWbi+lB41kaamppLTp1czl1Smbi2DiCyDJMooIbJiJ9IyNCIAmoY0HPySTkOTbHyWo45k9MmUsOAQWbvNCDHgNzef+rIQQDAjfaOnGvlNThX7n5/DneL5G99ewa3iuQvffND0XaGvjuLoQe4f8UD1JkT0WjPYt9iXlQAwOpAgJnnN9o7sr0PoKx3AGDN+dxjdSCwwHIXHhGwXmCAB27virLmfD6HWgUcPx9hctFoDwZHhvHxkSdx+vLMdd07d6DSU40q30oYkynoE0mQC7/CseVpiC4PKr0rYBIFxuQEpq5dhW/Pi6iq9sK5chWMVApq8h6SZ3+CGmmE4HRD9HhBNQJTScHVf3t2A8bGx7PBtrA1G4stg6U4fdlXsNQFn9s+fa10XaqpcAgCRLMaU5SCatZLkuoaHBUCROqx8rqGCgBUVWEKIiqrTaSpCapa5dOmAYcgYIpSTFGKtGmUpV0M1tRgcKA/b523zk91WtPDGiHFyd8ZzhVDmYTgdIFqKkxNhalpAACTKBCqnKC6Nn3oqABgTKYguFyWEapVBwCoRlAhViJt6tZh6GXdXwRm3uFlqAvXzeMRS5OmJqimgjozD6vCAdzv9UonqKEjrVvGpE2r102natWbHgGZXk8bOtKGUb4B8+3BpY6jubllavZi/18WfR/wqLPsDRBr19YXJDPL4ZXh2oJrd+8MMrFqpOd0Q1flo+W5SFITqAvXYWjY2kmPxuPY3f4ZAIC88QHc3hUgqQmMxuNFd3b16yIFuVLkG8gbx/qGbQUvwcy3gWLfAB61Hpwv9irAWwBvbAN4C+DNsjdAdO1rw2Mb1mL/rq1oqhIQ1Sne3/56tsCxD3eUbOBK456S17987d2F0LloiADQ130HJwHs37W1oMAfXdHseWLnAfgvnGCu/3avYVEFLjb2FMiczDQKuqJj94PoRwUNDKsDi6XtocD8L9DXfQfIMyDaR0u30PfLgot6mNg7Qd4CeLPsDSj4b3Cp8V7n10z8+3X25/bhzez3jne+usjEy34E2AbwFsCbJb8Mel7ay8Sh5hATtw7+yMRXW15l4mU/AmwDeAvgzZJ/B8yXZT8CbAN4C+CNbQBvAbyxDeAtgDe2AbwF8MY2gLcA3tgG8BbAG9sA3gJ4YxvAWwBvbAN4C+CNbQBvAbyxDeAtgDf/AToaNRDJELplAAAAAElFTkSuQmCC"
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        26,
+        225,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "ground": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.32,
+        0.32,
+        0.32
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        75,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        2.5,
+        0
+      ],
+      "scale": [
+        0.34,
+        0.34,
+        0.34
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        1,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+plugins { id 'fabric-loom' version '1.14.10' }
+version = '1.6.1'
+group = 'org.hurtorius.mirror'
+base { archivesName = 'mirror' }
+repositories { mavenCentral(); maven { url 'https://maven.nucleoid.xyz'; content { includeGroup 'eu.pb4'; includeGroup 'xyz.nucleoid' } } }
+java { toolchain.languageVersion = JavaLanguageVersion.of(21); withSourcesJar() }
+loom {
+ splitEnvironmentSourceSets()
+ mods { mirror { sourceSet sourceSets.main; sourceSet sourceSets.client } }
+ runs {
+  client { client(); runDir 'run/operator'; programArgs '--username', 'MirrorOperator', '--width', '1280', '--height', '720' }
+  viewer { client(); runDir 'run/viewer'; programArgs '--username', 'MirrorViewer', '--width', '960', '--height', '540' }
+  server { server(); runDir 'run/server' }
+ }
+}
+sourceSets {
+ worker { java.srcDirs = ['src/worker/java','src/main/java']; java.include 'org/hurtorius/mirror/core/**', 'org/hurtorius/mirror/engine/**', 'org/cef/browser/**'; resources.srcDirs = ['src/worker/resources'] }
+ test { compileClasspath += sourceSets.client.output; runtimeClasspath += sourceSets.client.output }
+}
+configurations { workerRuntime; workerImplementation.extendsFrom workerRuntime; offlineNatives }
+dependencies {
+ minecraft 'com.mojang:minecraft:1.21.11'
+ mappings loom.officialMojangMappings()
+ modImplementation 'net.fabricmc:fabric-loader:0.19.5'
+ modImplementation 'net.fabricmc.fabric-api:fabric-api:0.141.6+1.21.11'
+ include 'net.fabricmc.fabric-api:fabric-api:0.141.6+1.21.11'
+ include(modImplementation('eu.pb4:polymer-core:0.15.2+1.21.11'))
+ workerRuntime 'me.friwi:jcefmaven:152.0.6'
+ workerRuntime 'org.bytedeco:javacv:1.5.14', { transitive = false }
+ workerRuntime 'org.bytedeco:javacpp:1.5.14'
+ workerRuntime 'org.bytedeco:ffmpeg:8.1.2-1.5.14'
+ workerRuntime 'org.apache.pdfbox:pdfbox:3.0.6'
+ workerRuntime 'net.java.dev.jna:jna-platform:5.18.1'
+ testImplementation platform('org.junit:junit-bom:5.11.4')
+ testImplementation 'org.junit.jupiter:junit-jupiter'
+ testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+ ['windows-x86_64','linux-x86_64','macosx-x86_64','macosx-arm64'].each { platform ->
+  offlineNatives("org.bytedeco:ffmpeg:8.1.2-1.5.14:${platform}") { transitive = false }
+  offlineNatives("org.bytedeco:javacpp:1.5.14:${platform}") { transitive = false }
+ }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8'; options.release = 21 }
+test { useJUnitPlatform() }
+tasks.register('workerJar', Jar) {
+ dependsOn compileWorkerJava
+ archiveFileName = 'mirror-engine.jar'
+ destinationDirectory = layout.buildDirectory.dir('engine')
+ from sourceSets.worker.output
+}
+processResources {
+ exclude '**/mirror-capture-windows-x64.exe', '**/mirror-audio-windows-x64.exe'
+ inputs.property 'version', project.version
+ filesMatching('fabric.mod.json') { expand version: project.version }
+ dependsOn workerJar
+ from(tasks.named('workerJar')) { into 'mirror/engine' }
+ from(configurations.workerRuntime) { into 'mirror/engine' }
+ from('LICENSE','THIRD-PARTY-NOTICES.md')
+ from('docs/MERGED-SOURCE-LICENSE.txt') { into 'META-INF/licenses' }
+ from(['licenses/LGPL-3.0.txt','licenses/GPL-3.0.txt']) { into 'META-INF/licenses' }
+ from(configurations.offlineNatives) { into 'mirror/native-bundles'; rename { name -> name.replace('8.1.2-1.5.14-','').replace('1.5.14-','') } }
+ doLast {
+  def dir = destinationDir.toPath().resolve('mirror/engine')
+  def entries = []
+  java.nio.file.Files.list(dir).withCloseable { files -> files.sorted().forEach { p ->
+   if(java.nio.file.Files.isRegularFile(p) && p.fileName.toString().endsWith('.jar')) entries.add([name:p.fileName.toString(), bytes:java.nio.file.Files.size(p), sha256:java.security.MessageDigest.getInstance('SHA-256').digest(java.nio.file.Files.readAllBytes(p)).encodeHex().toString()])
+  } }
+  java.nio.file.Files.writeString(destinationDir.toPath().resolve('mirror/engine-manifest.json'),groovy.json.JsonOutput.toJson(entries))
+ }
+}
+tasks.withType(Jar).configureEach { exclude '**/*.exe' }
+sourcesJar { from(sourceSets.worker.allSource) { exclude 'org/hurtorius/mirror/core/**' } }
+
+// Optional local integration harness is not required to build the product.
+if (file('tools/native-proof.gradle').exists()) apply from: 'tools/native-proof.gradle'

@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "org.hurtorius.mirror.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "InitiatorProtectionMixin",
+    "ExplosionProtectionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "mirror",
+  "version": "${version}",
+  "name": "Mirror",
+  "description": "Mirror that displays any media from local devices or access to internet like a browser in your world.",
+  "authors": [
+    "Hurtorius"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "mixins": [
+    "mirror.mixins.json"
+  ],
+  "entrypoints": {
+    "main": [
+      "org.hurtorius.mirror.Mirror"
+    ],
+    "client": [
+      "org.hurtorius.mirror.client.MirrorClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": ">=0.141.6+1.21.11",
+    "polymer-core": "0.15.2+1.21.11"
+  }
+}

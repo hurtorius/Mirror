@@ -1,0 +1,110 @@
+{
+  "name": "compact_anchor_v2",
+  "units": "model pixels; divide by16 for block-space renderer",
+  "pose": {
+    "origin": 4.5,
+    "idle": 10,
+    "active": 11.5
+  },
+  "crystal": {
+    "radius": 3.2,
+    "top": 4.5,
+    "bottom": 3.75,
+    "texture": "mirror:textures/block/initiator_crystal_facets.png",
+    "texture_size": [
+      16,
+      16
+    ],
+    "top_uv": [
+      [
+        2.5,
+        0
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "bottom_uv": [
+      [
+        2.5,
+        13
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        0,
+        8
+      ]
+    ],
+    "top_mix_to": "E9FCFF",
+    "top_mix_amounts": [
+      0.05,
+      0.35,
+      0.55,
+      0.15
+    ],
+    "bottom_mix_to": "163C65",
+    "bottom_mix_amounts": [
+      0.35,
+      0.5,
+      0.25,
+      0.65
+    ]
+  },
+  "rings": [
+    {
+      "radius": 5.15,
+      "tilt_x_degrees": 22.5,
+      "width": 1.0,
+      "depth": 0.65,
+      "y_offset": 0,
+      "color": "97805B",
+      "spin_multiplier": 1.0
+    },
+    {
+      "radius": 5.65,
+      "tilt_x_degrees": -67.5,
+      "width": 0.75,
+      "depth": 0.55,
+      "y_offset": -1.0,
+      "color": "64B7B2",
+      "spin_multiplier": -0.7
+    }
+  ],
+  "ring_segments": 8,
+  "ring_joint_gap_radians": 0.015,
+  "preserve": [
+    "phase timings",
+    "fractional alpha",
+    "staging",
+    "mood authority",
+    "glow and reduced-motion gates",
+    "content-free screen fold",
+    "permission and privacy paths"
+  ],
+  "item": {
+    "type": "minecraft:item/generated",
+    "texture": "mirror:item/initiator",
+    "pixels": [
+      32,
+      32
+    ],
+    "source": "same complete live reference mesh",
+    "camera_azimuth_degrees": 215,
+    "camera_elevation_degrees": 15
+  },
+  "ring_white_sample_uv": [
+    0.15625,
+    0.09375
+  ],
+  "ring_settled_opacity": 1.0,
+  "ring_fade": "multiply lifecycle alpha and per-ring staging; preserve smooth transitions",
+  "ring_mood": "exact LIVE palette; blend special preparing/sharing/locked hints"
+}

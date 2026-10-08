@@ -1,0 +1,8 @@
+{
+  "key.categories.mirror.controls": "Mirror",
+  "key.mirror.hide": "隐藏或显示所有 Mirror 屏幕",
+  "key.mirror.stop": "立即停止所有实时共享",
+  "key.mirror.settings": "个人 Mirror 设置",
+  "block.mirror.initiator": "镜像启动器",
+  "item.mirror.initiator": "镜像启动器"
+}

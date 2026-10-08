@@ -1,0 +1,26 @@
+.gradle/
+build/
+run/
+review/
+*.log
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.zip
+.env
+.env.*
+**/[Aa]ccess.txt
+*.key
+*.pem
+**/Cookies
+**/Login Data
+**/.chrome-user-data*/
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+PROGRESS.md
+AUDIT.md
+VERIFICATION.md
+MERGE.md
+tools/
+src/proof/
