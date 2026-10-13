@@ -1,0 +1,72 @@
+{
+  "macosx-x86_64": [
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/ffmpeg/8.1.2-1.5.14/ffmpeg-8.1.2-1.5.14-macosx-x86_64.jar",
+      "name": "ffmpeg-macosx-x86_64.jar",
+      "sha256": "b5a8f5124fb2d04412bd01eb5ca469d153d1c396fd0c67a33d3f9a1501c94c0c",
+      "bytes": 23977215
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/javacpp/1.5.14/javacpp-1.5.14-macosx-x86_64.jar",
+      "name": "javacpp-macosx-x86_64.jar",
+      "sha256": "ce2e642c0317d08f08fc97ba44b2c18d2a22a85516fdec6b9854f3a930c5127b",
+      "bytes": 39995
+    }
+  ],
+  "macosx-arm64": [
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/ffmpeg/8.1.2-1.5.14/ffmpeg-8.1.2-1.5.14-macosx-arm64.jar",
+      "name": "ffmpeg-macosx-arm64.jar",
+      "sha256": "af57468c0bb7b2e9c8c93547e6d599e2b4faa4117118555be92675850972420c",
+      "bytes": 20582183
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/javacpp/1.5.14/javacpp-1.5.14-macosx-arm64.jar",
+      "name": "javacpp-macosx-arm64.jar",
+      "sha256": "75d755656d3ddafaa51c5d2d8d340c731a0bf2d742b033a37641a905aa2a7332",
+      "bytes": 38712
+    }
+  ],
+  "windows-x86_64": [
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/ffmpeg/8.1.2-1.5.14/ffmpeg-8.1.2-1.5.14-windows-x86_64.jar",
+      "name": "ffmpeg-windows-x86_64.jar",
+      "sha256": "67ebc3e6940add83b1b8a9dfd337a5c67556f2b72cb3225efe91a26874445c8e",
+      "bytes": 30441678
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/javacpp/1.5.14/javacpp-1.5.14-windows-x86_64.jar",
+      "name": "javacpp-windows-x86_64.jar",
+      "sha256": "69bb4b0322aa807199485a9bf394ffe2117bb9ef5c34762b7d6567d7053087b5",
+      "bytes": 2031831
+    }
+  ],
+  "linux-x86_64": [
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/ffmpeg/8.1.2-1.5.14/ffmpeg-8.1.2-1.5.14-linux-x86_64.jar",
+      "name": "ffmpeg-linux-x86_64.jar",
+      "sha256": "6d0f000c4ddede3b669aa7c5c585e9b71f69b7f621fed7ab28ec01045dc336d0",
+      "bytes": 26915834
+    },
+    {
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/javacpp/1.5.14/javacpp-1.5.14-linux-x86_64.jar",
+      "name": "javacpp-linux-x86_64.jar",
+      "sha256": "1efab617735a44529bb85daaaefabe46c8686582989c46593c36569e9786fdaa",
+      "bytes": 47603
+    }
+  ],
+  "linux-arm64": [
+    {
+      "name": "ffmpeg-linux-arm64.jar",
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/ffmpeg/8.1.2-1.5.14/ffmpeg-8.1.2-1.5.14-linux-arm64.jar",
+      "bytes": 26304735,
+      "sha256": "c8729978c862b0e2e5643ade1b41266c5ba8c34b791f41104e5794ad3cefd0bf"
+    },
+    {
+      "name": "javacpp-linux-arm64.jar",
+      "url": "https://repo.maven.apache.org/maven2/org/bytedeco/javacpp/1.5.14/javacpp-1.5.14-linux-arm64.jar",
+      "bytes": 42779,
+      "sha256": "30f63f17bb05cba4bdf488b77a3d9785b2ec261d4d528cf219b6c7081d20d636"
+    }
+  ]
+}
